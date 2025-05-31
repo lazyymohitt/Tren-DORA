@@ -1,4 +1,8 @@
 @import "tailwindcss";  
+@font-face {
+    font-family: 'Tagesschrift';
+    src: url(../src/font/Tagesschrift-Regular.ttf);
+}
 
 a.active hr{
     display: block;
