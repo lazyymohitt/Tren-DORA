@@ -1,39 +1,19 @@
-// import { createContext } from "react";
-// import { products } from "../assets/assets";
+import React from 'react'
+import { createContext } from 'react'
+import { products } from '../assets/assets';
 
-// export  const ShopContext  = createContext();
-
-// const ShopContextProvider = (props)=>{
-
-//     const currency = '$';
-//     const deliveryFee = 25
-//      const value ={
-//         products ,currency , deliveryFee
-//      }
-
-//      return(
-//         <ShopContext.Provider>
-//             {props.children}
-//         </ShopContext.Provider>
-//      )
-// }
-// export default ShopContextProvider
+export const GlobalContext = createContext();
 
 
-
-import { useContext, createContext } from "react";
-
-export const  shopContext = createContext(
-    const currency = '$'
-        const deliveryFee = 25
-         const value ={
-
-    products ,currency , deliveryFee
-
-    });
-
-export  const ShopProvider =  shopContext.Provider
-
-export default  function useShop(){
-    return   useContext(shopContext)
+const ShopContext = (props) => {
+       const currency = "$";
+    const deliveryCost = 20;
+    const GlobalData = {
+        products, deliveryCost, currency
+    }
+  return (
+    <GlobalContext.Provider value={GlobalData}>{props.children}</GlobalContext.Provider>
+  )
 }
+
+export default ShopContext
